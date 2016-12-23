@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 今天是2016年12月17日  晴天: ☀  心情：(^o^)(^0^)(^○^)</span><br />
+				<span class="keyword">男主 =   我     李帅龙</span><br />
+				<span class="keyword">女主 =   你     刘宵冰</span><br />
+				<span class="space"/><span class="comments">* 终于等到了今天!</span><br />
+				<span class="space"/><span class="comments">* 我是工科男，你是代码女</span><br />
+				<span class="space"/><span class="comments">* 那么，听我用你的方式讲我们的故事：...</span><br />
+				<span class="space"/><span class="comments">* 2009年，我们相识在灵宝一高</span><br />
+				<span class="space"/><span class="comments">* 那一年</span><br />
+				<span class="space"/><span class="comments">* 我高三</span><br />
+				<span class="space"/><span class="comments">* 你高三</span><br />
+				<span class="space"/><span class="comments">* 你坐我旁边</span><br />
+				<span class="space"/><span class="comments">* 第一次看到你的眼睛(☆＿☆)</span><br />
+				<span class="space"/><span class="comments">* 从那天起</span><br />
+				<span class="space"/><span class="comments">* 我沦陷了</span><br />
+				<span class="space"/><span class="comments">  i.miss(u);</span><br />
+				<span class="comments">// 为了你，我的二模考彻底完犊子 T_T</span><br />
+				<span class="space"/><span class="comments">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></span><br />
+				<span class="comments">// 2009年3月22日晚上, 我写给你第一封情书</span><br />
+				<span class="comments">// 你愿意做我女朋友吗？</span><br />
+				<span class="comments"> i.love(u);</span><br />
+				<span class="comments">// 幸运的是，第二天你成了我的女朋友</span><br />
+				<span class="comments"> u.accepted();</span><br />
+				<span class="comments">// 从那天起</span><br />
+				<span class="comments"> i.takeCareOf(u);</span><br />
+				<span class="comments">// You say that you won't be so easy to marry me.</span><br />
+				<span class="comments">// I keep waiting and I have confidence that you will.</span><br />
+				<span class="keyword">   boolean isHesitate = </span><span class="keyword">true</span>;<br />
+				<span class="keyword">   while  (isHesitate) {</span><br />
+				<span class="keyword">   i.waitFor(u);</span><br />
+				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+				<span class="comments">  isHesitate = u.thinkOver();}</span><br />
+				<span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
+				<span class="comments">  i.marry(u) && i.liveHappilyWith(u);</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						   小冰, 我们在一起
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+			我们永远在一起<br/>
+					
+					<div class="messages">—李帅龙</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2009, 2, 23);
+		together.setHours(8);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
