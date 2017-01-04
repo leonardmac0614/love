@@ -8,6 +8,31 @@
 			font-family: digit;
 			src: url('digital-7_mono.ttf') format("truetype");
 		}
+		* { border:0; margin:0; padding:0; }
+		p { position:absolute; top:3px; right:28px; color:#555; font:bold 13px/1 sans-serif;}
+		.lanren{ width: 670px; margin-left: auto; margin-right: auto; }
+		h1{ font-size: 16px; color: #A2A2A2; line-height: 60px; }
+		body{ background-color: #2D2D2D; }
+		.zoom {
+			display:inline-block;
+			position: relative;
+		}
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			background:url('images/icon.png');
+		}
+		.zoom img {
+			display: block;
+		}
+		.zoom img::selection { background-color: transparent; }
+		#ex2 img:hover { cursor: url('images/grab.cur'), default; }
+		#ex2 img:active { cursor: url('images/grabbed.cur'), default; }
 	</style>
 	<link href="css/default.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -16,10 +41,39 @@
 </head>
 
 <body>
+	<audio controls>
+  		<source src="audio/test.mp3" type="audio/mp3">
+  		<source src="audio/test.mp3" type="audio/mpeg">
+	</audio>
+
+	<!-- 新加的图片特效 -->
+	<div class="lanren">
+		<div class="lanren-content">
+			<span class='zoom' id='ex1'>
+				<img src='images/what.png' width='335' height='250' alt='web design'/>
+				<p></p>
+			</span>
+			
+			</span>
+		</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src='js/jquery.zoom.js'></script>
+	<script>
+		$(document).ready(function(){
+			$('#ex1').zoom();
+			$('#ex2').zoom({ on:'grab' });
+			$('#ex3').zoom({ on:'click' });			 
+			$('#ex4').zoom({ on:'toggle' });
+		});
+	</script>
+	<!-- 图片特效end -->
+
 	<div id="mainDiv">
 		<div id="content">
 			<div id="code">
 				<span class="comments">/**</span><br />
+				
 				<span class="space"/><span class="comments">* 今天是2016年12月17日  晴天: ☀  心情：(^o^)(^0^)(^○^)</span><br />
 				<span class="keyword">男主 =   我     李帅龙</span><br />
 				<span class="keyword">女主 =   你     刘宵冰</span><br />
@@ -71,6 +125,8 @@
 			</div>
 		</div>
 	</div>
+
+	
 
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
