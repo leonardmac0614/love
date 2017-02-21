@@ -41,16 +41,33 @@
 </head>
 
 <body>
-<!--	<audio controls>
-  		<source src="audio/test.mp3" type="audio/mp3" autoplay="autoplay">
-  		<source src="audio/test.mp3" type="audio/mpeg" autoplay="autoplay">
+	<audio controls>
+  		<source src="audio/test.mp3" type="audio/mp3">
+  		<source src="audio/test.mp3" type="audio/mpeg">
 	</audio>
 
-	<embed src="audio/test.mp3" hidden="true" autostart="true" loop="true">
--->
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="http://music.163.com/outchain/player?type=0&id=596366614&auto=1&height=32" style="position:fixed; right:0px; bottom:0px;"></iframe>
-
+	<!-- 新加的图片特效 -->
+	<div class="lanren">
+		<div class="lanren-content">
+			<span class='zoom' id='ex1'>
+				<img src='images/what.png' width='335' height='250' alt='web design'/>
+				<p></p>
+			</span>
+			
+			</span>
+		</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src='js/jquery.zoom.js'></script>
+	<script>
+		$(document).ready(function(){
+			$('#ex1').zoom();
+			$('#ex2').zoom({ on:'grab' });
+			$('#ex3').zoom({ on:'click' });			 
+			$('#ex4').zoom({ on:'toggle' });
+		});
+	</script>
+	<!-- 图片特效end -->
 
 	<div id="mainDiv">
 		<div id="content">
@@ -58,7 +75,7 @@
 				<span class="comments">/**</span><br />
 				
 				<span class="space"/><span class="comments">* 今天是2016年12月17日  晴天: ☀  心情：(^o^)(^0^)(^○^)</span><br />
-				<span class="keyword">男主 =   我     <a rel="license" href="http://leonardmac.me" target="_blank">李帅龙</a></span><br />
+				<span class="keyword">男主 =   我     李帅龙</span><br />
 				<span class="keyword">女主 =   你     刘宵冰</span><br />
 				<span class="space"/><span class="comments">* 终于等到了今天!</span><br />
 				<span class="space"/><span class="comments">* 我是工科男，你是代码女</span><br />
@@ -73,7 +90,7 @@
 				<span class="space"/><span class="comments">* 我沦陷了</span><br />
 				<span class="space"/><span class="comments">  i.miss(u);</span><br />
 				<span class="comments">// 为了你，我的二模考彻底完犊子 T_T</span><br />
-				<span class="space"/><span class="comments">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></span><br />
+				<span class="space"/><span class="comments">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></span><br />
 				<span class="comments">// 2009年3月22日晚上, 我写给你第一封情书</span><br />
 				<span class="comments">// 你愿意做我女朋友吗？</span><br />
 				<span class="comments"> i.love(u);</span><br />
@@ -109,6 +126,8 @@
 		</div>
 	</div>
 
+	
+
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
@@ -142,31 +161,5 @@
 			$("#code").typewriter();
 		}
 	</script>
-
-
-	<!-- 新加的图片特效 -->
-<!--	<div class="lanren">
-		<div class="lanren-content">
-			<span class='zoom' id='ex1'>
-				<img src='images/what.png' width='335' height='250' alt='web design'/>
-				<p></p>
-			</span>
-			
-			</span>
-		</div>
-	</div>
-	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
-	<script src='js/jquery.zoom.js'></script>
-	<script>
-		$(document).ready(function(){
-			$('#ex1').zoom();
-			$('#ex2').zoom({ on:'grab' });
-			$('#ex3').zoom({ on:'click' });			 
-			$('#ex4').zoom({ on:'toggle' });
-		});
-	</script>
-	<!-- 图片特效end -->
-	
-
 </body>
 </html>
